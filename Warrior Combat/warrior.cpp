@@ -71,22 +71,33 @@ warrior::warrior(int d)
    //some kind of difficulty sacle d so that competitors can be scale according to difficulty
 }
 
-bool combat(warrior& a,warrior& b)
+bool combat(warrior a,warrior b)
 {
     int a_damage, b_damage;
-        while(a.get_health()>0&&b.get_health())
+    int a_health = a.get_health();
+    int b_health = b.get_health();
+        while(a_health>0&&b_health)
         {
             a_damage = rand() % (a.get_max_damage() - a.get_min_damage())+a.get_min_damage();
             b_damage = rand() % (b.get_max_damage() - b.get_min_damage())+b.get_min_damage();
-            a.set_health(a.get_health()-b_damage);
-            b.set_health(b.get_health()-a_damage);
+            a_health-=b_damage;
+            b_health-=a_damage;
         }
      bool temp;
-     temp = (a.get_health()<b.get_health()); // must sort out better way for choosing winner
-     return(temp);
+     temp = (a_damage<b_damage); // must sort out better way for choosing winner
+     return(not(temp));
 }
-bool aud_combat(warrior& a,warrior& b)
-{
 
+void winner_announce(warrior a,warrior b,bool d)
+{
+    if(d)
+        {
+                cout << a.get_name() <<" won\n";
+        }
+        else
+        {
+            cout<< b.get_name() <<" won\n";
+        }
 }
+
 

@@ -36,8 +36,8 @@ public:
     warrior(int);
 };
 
-bool combat(warrior&,warrior&);
-bool aud_combat(warrior&,warrior&);
+bool combat(warrior,warrior);
+void winner_announce(warrior,warrior,bool);
 
 
 #endif // WARRIOR_H_INCLUDED
