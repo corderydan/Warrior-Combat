@@ -76,7 +76,7 @@ bool combat(warrior a,warrior b)
     int a_damage, b_damage;
     int a_health = a.get_health();
     int b_health = b.get_health();
-        while(a_health>0&&b_health)
+        while((a_health>0)&&(b_health>0))
         {
             a_damage = rand() % (a.get_max_damage() - a.get_min_damage())+a.get_min_damage();
             b_damage = rand() % (b.get_max_damage() - b.get_min_damage())+b.get_min_damage();
@@ -84,7 +84,7 @@ bool combat(warrior a,warrior b)
             b_health-=a_damage;
         }
      bool temp;
-     temp = (a_damage<b_damage); // must sort out better way for choosing winner
+     temp = (a_health<b_health); // must sort out better way for choosing winner
      return(not(temp));
 }
 
