@@ -38,6 +38,7 @@ public:
 
 bool combat(warrior,warrior);
 void winner_announce(warrior,warrior,bool);
+bool audiblecombat (warrior,warrior);
 
 
 #endif // WARRIOR_H_INCLUDED

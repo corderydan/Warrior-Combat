@@ -88,6 +88,29 @@ bool combat(warrior a,warrior b)
      return(not(temp));
 }
 
+bool audiblecombat (warrior a,warrior b)
+{
+    int a_damage, b_damage;
+    int a_health = a.get_health();
+    int b_health = b.get_health();
+    int counter=1;
+        while((a_health>0)&&(b_health>0))
+        {
+            a_damage = rand() % (a.get_max_damage() - a.get_min_damage())+a.get_min_damage();
+            b_damage = rand() % (b.get_max_damage() - b.get_min_damage())+b.get_min_damage();
+            a_health-=b_damage;
+            b_health-=a_damage;
+            cout << "Round " << counter << ":\n" << a.get_name() << " hit " << a_damage << " points. \n" <<
+            b.get_name() << " hit " << b_damage << " points. \n" << a.get_name() << " health: " << a_health<<" " << b.get_name()<<
+            " health: " << b_health << ".\n";
+            counter++;
+
+        }
+     bool temp;
+     temp = (a_health<b_health); // must sort out better way for choosing winner
+     return(not(temp));
+}
+
 void winner_announce(warrior a,warrior b,bool d)
 {
     if(d)
