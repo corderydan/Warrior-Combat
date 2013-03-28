@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1364435029 source:c:\users\dan\documents\c++\revision\warrior combat\main.cpp
+	<iostream>
+	"warrior.h"
+
+1364432414 source:c:\users\dan\documents\c++\revision\warrior combat\warrior.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<vector>
+	"warrior.h"
+
+1364435029 c:\users\dan\documents\c++\revision\warrior combat\warrior.h
+	<string>
+	<iostream>
+	<fstream>
+	<vector>
+
