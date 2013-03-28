@@ -16,21 +16,24 @@
 	<fstream>
 	<vector>
 
-1364446391 source:c:\users\dan\documents\c++\gitrep\warrior combat\main.cpp
+1364500901 source:c:\users\dan\documents\c++\gitrep\warrior combat\main.cpp
 	<iostream>
 	"warrior.h"
+	<ctime>
+	<cstdlib>
 
-1364446317 c:\users\dan\documents\c++\gitrep\warrior combat\warrior.h
+1364500694 c:\users\dan\documents\c++\gitrep\warrior combat\warrior.h
 	<string>
 	<iostream>
 	<fstream>
 	<vector>
 
-1364446584 source:c:\users\dan\documents\c++\gitrep\warrior combat\warrior.cpp
+1364500714 source:c:\users\dan\documents\c++\gitrep\warrior combat\warrior.cpp
 	<iostream>
 	<string>
 	<fstream>
 	<vector>
 	"warrior.h"
 	<cstdlib>
+	<ctime>
 

@@ -4,6 +4,7 @@
 #include<vector>
 #include"warrior.h"
 #include<cstdlib>
+#include<ctime>
 
 using namespace std;
 
@@ -66,10 +67,7 @@ warrior::warrior(int x,int y,int z,int w,string s)
     recovery_rate = w;
     name = s;
 }
-warrior::warrior(int d)
-{
-   //some kind of difficulty sacle d so that competitors can be scale according to difficulty
-}
+
 
 bool combat(warrior a,warrior b)
 {
@@ -90,6 +88,7 @@ bool combat(warrior a,warrior b)
 
 bool audiblecombat (warrior a,warrior b)
 {
+    srand (time(NULL));
     int a_damage, b_damage;
     int a_health = a.get_health();
     int b_health = b.get_health();
@@ -121,6 +120,42 @@ void winner_announce(warrior a,warrior b,bool d)
         {
             cout<< b.get_name() <<" won\n";
         }
+}
+
+warrior::warrior(int x)
+{
+    vector<string> names = read_names();
+    srand (time(NULL));
+    int number = rand() % names.size();
+    name= names[number];
+
+
+}
+
+vector<string> read_names()
+{
+    ifstream file("Names.dat");
+    string temp;
+    vector<string> name_array;
+    while(file.good())
+    {
+        getline(file,temp);
+        name_array.push_back(temp);
+    }
+    return(name_array);
+}
+
+int uniform_int_rand(int x,int y,int rando)
+{
+    srand(rando);
+    int sum = 0,result = 0, temp;
+    for(int i =0;i<20;i++)
+    {
+        temp= rand() % (y*2+1) +(x-y);
+        sum+=temp;
+    }
+    result=(1.0*sum)/20;
+    return(result);
 }
 
 

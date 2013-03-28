@@ -39,6 +39,8 @@ public:
 bool combat(warrior,warrior);
 void winner_announce(warrior,warrior,bool);
 bool audiblecombat (warrior,warrior);
+vector<string> read_names();
+int uniform_int_rand(int,int,int);
 
 
 #endif // WARRIOR_H_INCLUDED

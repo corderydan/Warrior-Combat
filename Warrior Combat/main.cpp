@@ -1,5 +1,8 @@
 #include <iostream>
 #include"warrior.h"
+#include<ctime>
+#include<cstdlib>
+
 
 using namespace std;
 
@@ -12,6 +15,16 @@ int main()
     {
         winner_announce(one,two,audiblecombat(one,two));
     }
+
+    srand(time(NULL));
+
+    for (int i=0;i<20;i++)
+    {
+
+        cout << uniform_int_rand(20,30,rand())<< endl;
+    }
+
+
 
     return 0;
 }
